@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07886F1575B950EDE1A0FCBE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		0C80B921A6F3F58F76C31292 /* libPods-loguinAllEasy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-loguinAllEasy.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		4702B90EBEF445A5B2382A47 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379C819FDD04353AA3F28FD /* BootSplash.storyboard */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B9D60B4D2DCEAA44007F5B80 /* MyDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D60B4C2DCEAA44007F5B80 /* MyDeviceInfo.swift */; };
+		B9D60B502DCEAC7C007F5B80 /* MyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D60B4F2DCEAC7C007F5B80 /* MyDeviceInfo.m */; };
+		E78D526B39424963948237B3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB24D44D7EC945CB88688C08 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = loguinAllEasy;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* loguinAllEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loguinAllEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = loguinAllEasy/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = loguinAllEasy/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = loguinAllEasy/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-loguinAllEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loguinAllEasy.debug.xcconfig"; path = "Target Support Files/Pods-loguinAllEasy/Pods-loguinAllEasy.debug.xcconfig"; sourceTree = "<group>"; };
+		4379C819FDD04353AA3F28FD /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = loguinAllEasy/BootSplash.storyboard; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-loguinAllEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loguinAllEasy.release.xcconfig"; path = "Target Support Files/Pods-loguinAllEasy/Pods-loguinAllEasy.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-loguinAllEasy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loguinAllEasy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = loguinAllEasy/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = loguinAllEasy/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9D60B4C2DCEAA44007F5B80 /* MyDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDeviceInfo.swift; sourceTree = "<group>"; };
+		B9D60B4E2DCEAAA7007F5B80 /* MyIosNativeModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyIosNativeModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9D60B4F2DCEAC7C007F5B80 /* MyDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDeviceInfo.m; sourceTree = "<group>"; };
+		B9D60B512DCEB1D4007F5B80 /* loguinAllEasy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "loguinAllEasy-Bridging-Header.h"; sourceTree = "<group>"; };
+		EB24D44D7EC945CB88688C08 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = loguinAllEasy/Colors.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -49,14 +49,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* loguinAllEasy */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +57,12 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				B9D60B4C2DCEAA44007F5B80 /* MyDeviceInfo.swift */,
+				B9D60B4E2DCEAAA7007F5B80 /* MyIosNativeModule-Bridging-Header.h */,
+				B9D60B4F2DCEAC7C007F5B80 /* MyDeviceInfo.m */,
+				B9D60B512DCEB1D4007F5B80 /* loguinAllEasy-Bridging-Header.h */,
+				4379C819FDD04353AA3F28FD /* BootSplash.storyboard */,
+				EB24D44D7EC945CB88688C08 /* Colors.xcassets */,
 			);
 			name = loguinAllEasy;
 			sourceTree = "<group>";
@@ -149,7 +147,7 @@
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -172,19 +170,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				07886F1575B950EDE1A0FCBE /* PrivacyInfo.xcprivacy in Resources */,
+				4702B90EBEF445A5B2382A47 /* BootSplash.storyboard in Resources */,
+				E78D526B39424963948237B3 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,19 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D60B502DCEAC7C007F5B80 /* MyDeviceInfo.m in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
+				B9D60B4D2DCEAA44007F5B80 /* MyDeviceInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* loguinAllEasy */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
@@ -307,6 +295,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = loguinAllEasy;
+				SWIFT_OBJC_BRIDGING_HEADER = "loguinAllEasy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -334,6 +323,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = loguinAllEasy;
+				SWIFT_OBJC_BRIDGING_HEADER = "loguinAllEasy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -408,7 +398,14 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -473,7 +470,13 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
