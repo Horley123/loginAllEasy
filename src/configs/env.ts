@@ -12,11 +12,11 @@ const envs: IEnv[] = [
   },
   {
     name: 'test',
-    api: 'http://vps44272.publiccloud.com.br:3333/',
+    api: '',
   },
   {
     name: 'production',
-    api: 'https://vps47425.publiccloud.com.br:3333/',
+    api: '',
   },
 ];
 

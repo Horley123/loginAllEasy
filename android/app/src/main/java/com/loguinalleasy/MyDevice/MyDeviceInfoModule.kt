@@ -12,7 +12,7 @@ class MyDeviceInfoModule : ReactPackage {
 
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
         val modules = ArrayList<NativeModule>()
-        modules.add(MyDeviceInfoPackage(reactContext)) // Aqui o ideal seria o módulo, mas mantive seu nome
+        modules.add(MyDeviceInfoPackage(reactContext)) 
         return modules
     }
 

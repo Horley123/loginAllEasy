@@ -2,7 +2,7 @@ import {create} from 'zustand';
 import {config} from '@gluestack-ui/config';
 import {darkTheme, lightTheme} from '@/theme';
 
-interface ThemeStore {
+export interface ThemeStore {
   isDarkMode: boolean;
   theme: typeof config;
   toggleTheme: () => void;
@@ -17,7 +17,7 @@ export default create<ThemeStore>((set, get) => ({
       colors: {
         ...config.tokens.colors,
         ...lightTheme,
-      },
+      } as any,
     },
   },
   toggleTheme: () => {
@@ -34,7 +34,7 @@ export default create<ThemeStore>((set, get) => ({
           colors: {
             ...config.tokens.colors,
             ...newColors,
-          },
+          } as any,
         },
       },
     });

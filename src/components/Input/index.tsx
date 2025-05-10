@@ -99,7 +99,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
           fontSize={17}
           value={value}
           onChangeText={(newValue: string) => onText(newValue)}
-          secureTextEntry={secure}
+          secureTextEntry={secureTextEntry && secure}
         />
         {secureTextEntry && (
           <InputSlot pr="$3" onPress={() => {}}>

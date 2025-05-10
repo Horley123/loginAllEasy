@@ -35,30 +35,22 @@ export const setupApiInterceptors = (
       showLoading(false);
 
       if (error.response) {
-        console.error(
-          'Erro na resposta da API:',
-          error.response.status,
-          error.response.data,
-        );
         showError?.({
           message: error.response.data.message || 'Erro na API',
           visible: true,
         });
-      } else if (error.request) {
-        // Nenhuma resposta recebida da API
-        console.error('Nenhuma resposta recebida da API:', error.request);
-        showError?.({
-          message: 'Erro de conexão. Verifique sua internet.',
-          visible: true,
-        });
       } else {
-        // Erro ao configurar a requisição
-        console.error('Erro ao configurar a requisição:', error.message);
         showError?.({
           message: 'Erro inesperado. Tente novamente.',
           visible: true,
         });
       }
+      // else if (error.request) {
+      //   showError?.({
+      //     message: 'Erro de conexão. Verifique sua internet.',
+      //     visible: true,
+      //   });
+      // }
 
       return Promise.reject(error);
     },

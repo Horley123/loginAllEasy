@@ -14,7 +14,7 @@ class MyDeviceInfoPackage(private val reactContext: ReactApplicationContext) : R
     }
 
     @ReactMethod
-    fun getDeviceInfo(message: String, callback: Callback) {
+    fun getDeviceInfo( callback: Callback) {
         val platform = " ${Build.VERSION.RELEASE}"
         val sdkVersion = " ${Build.VERSION.SDK_INT}"
         val manufacturer = "${Build.MANUFACTURER}"

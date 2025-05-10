@@ -60,12 +60,9 @@ export function Login() {
 
   const Infor = async () => {
     if (Platform.OS === 'android') {
-      NativeModules.MyDeviceInfoPackage.getDeviceInfo(
-        'CARALHOP',
-        (deviceInfo: any) => {
-          setDeviceInfo(JSON.parse(deviceInfo));
-        },
-      );
+      NativeModules.MyDeviceInfoPackage.getDeviceInfo((deviceInfo: any) => {
+        setDeviceInfo(JSON.parse(deviceInfo));
+      });
     }
 
     if (Platform.OS === 'ios') {
@@ -74,9 +71,7 @@ export function Login() {
           model: string;
           name: string;
           iosVersion: string;
-        } = await NativeModules.MyDeviceInfo.getDeviceInfo(
-          'Agora vaiiiiiiiiii',
-        );
+        } = await NativeModules.MyDeviceInfo.getDeviceInfo();
 
         setDeviceInfo(e => ({
           ...e,
@@ -86,7 +81,6 @@ export function Login() {
           platform: result.name,
           manufacturer: result.name,
         }));
-        console.log('ios', result);
       } catch (error) {
         console.log('ios', error);
       }
