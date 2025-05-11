@@ -5,16 +5,5 @@ export const requestLogin = async ({
   email,
   senha,
 }: ILogin): Promise<ILoginResponse | undefined> => {
-  if (email === 'teste@example.com' && senha === '123TA@a') {
-    return {
-      email,
-      senha,
-      token: '1234',
-    };
-  }
-
-  await api.post('/auth', {
-    email,
-    senha,
-  });
+  return await api.get(`/users?email=${email}&senha=${senha}`);
 };

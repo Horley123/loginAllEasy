@@ -1,45 +1,42 @@
+import MockAdapter from 'axios-mock-adapter';
 import api from '../src/services/api';
 import {requestLogin} from '../src/services/requests/auth';
-import {ILoginResponse} from '../src/dtos/login';
 
 describe('requestLogin', () => {
-  const validCredentials = {email: 'teste@example.com', senha: '123TA@a'};
-  const invalidCredentials = {email: 'foo@bar.com', senha: 'wrong'};
+  let mock: MockAdapter;
+  const email = 'user@example.com';
+  const senha = 'pass';
+  const url = `/users?email=${email}&senha=${senha}`;
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    mock = new MockAdapter(api);
   });
 
-  test('returns ILoginResponse for valid credentials without calling api.post', async () => {
-    const postSpy = jest.spyOn(api, 'post');
-
-    const result = await requestLogin(validCredentials);
-
-    expect(result).toEqual<ILoginResponse>({
-      email: validCredentials.email,
-      senha: validCredentials.senha,
-      token: '1234',
-    });
-    expect(postSpy).not.toHaveBeenCalled();
+  afterEach(() => {
+    mock.restore();
   });
 
-  test('calls api.post and returns undefined for invalid credentials', async () => {
-    const postSpy = jest
-      .spyOn(api, 'post')
-      .mockResolvedValue({data: {success: true}});
+  it('returns AxiosResponse with data array when API responds with array', async () => {
+    const responseData = [{id: 1, name: 'Test', token: 'tok'}];
+    mock.onGet(url).reply(200, responseData);
 
-    const result = await requestLogin(invalidCredentials);
-
-    expect(postSpy).toHaveBeenCalledWith('/auth', invalidCredentials);
-    expect(result).toBeUndefined();
+    const result = await requestLogin({email, senha});
+    // Should return full AxiosResponse
+    expect(result).toBeDefined();
+    expect(result?.data).toEqual(responseData);
   });
 
-  test('propagates errors from api.post', async () => {
-    const error = new Error('Network Error');
-    jest.spyOn(api, 'post').mockRejectedValue(error);
+  it('propagates error on HTTP failure', async () => {
+    mock.onGet(url).reply(500);
+    await expect(requestLogin({email, senha})).rejects.toThrow();
+  });
 
-    await expect(requestLogin(invalidCredentials)).rejects.toThrow(
-      'Network Error',
-    );
+  it('returns AxiosResponse with data object on non-array response', async () => {
+    const nonArray = {unexpected: true};
+    mock.onGet(url).reply(200, nonArray);
+
+    const result = await requestLogin({email, senha});
+    expect(result).toBeDefined();
+    expect(result?.data).toEqual(nonArray);
   });
 });

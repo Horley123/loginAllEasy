@@ -6,7 +6,6 @@ const api = axios.create({
   baseURL: env?.api,
 });
 
-// Parametros padrões
 api.defaults.headers.common.platform = Platform.OS;
 api.defaults.headers.common.remoteId = 'unkown';
 api.defaults.maxBodyLength = 10000000;
@@ -19,17 +18,26 @@ export const setupApiInterceptors = (
   showLoading: (visible: boolean) => void,
 ) => {
   api.interceptors.request.use(config => {
-    console.log('aqui,', {config});
-    showLoading(true); // Exibe o loading antes da requisição
+    showLoading(true);
     return config;
   });
 
   api.interceptors.response.use(
     response => {
-      const randomToken = Math.random().toString(36).substring(2);
-      api.defaults.headers.common.Authorization = `Bearer ${randomToken}`;
+      if (!response.data[0].token) {
+        showLoading(false);
+        showError?.({
+          message: 'login ou senha incorretos',
+          visible: true,
+        });
+
+        return {} as any;
+      }
+
+      api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
       showLoading(false);
-      return response;
+
+      return response.data[0];
     },
     error => {
       showLoading(false);
@@ -40,6 +48,7 @@ export const setupApiInterceptors = (
           visible: true,
         });
       } else {
+        console.log('Error', error);
         showError?.({
           message: 'Erro inesperado. Tente novamente.',
           visible: true,

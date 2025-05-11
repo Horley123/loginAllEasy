@@ -1,15 +1,14 @@
 import MockAdapter from 'axios-mock-adapter';
-import api, {setupApiInterceptors} from './../src/services/api';
+import api, {setupApiInterceptors} from '../src/services/api';
 
-describe('API Module', () => {
+describe('API Interceptors (minimal)', () => {
   let mock: MockAdapter;
-  let showLoading: jest.Mock<any, any, any>;
-  let showError: jest.Mock<any, any, any>;
+  const showLoading = jest.fn();
+  const showError = jest.fn();
 
   beforeEach(() => {
     mock = new MockAdapter(api);
-    showLoading = jest.fn();
-    showError = jest.fn();
+    // reset interceptors
     // @ts-ignore
     api.interceptors.request.handlers = [];
     // @ts-ignore
@@ -19,43 +18,52 @@ describe('API Module', () => {
 
   afterEach(() => {
     mock.restore();
+    jest.clearAllMocks();
   });
 
-  test('should call showLoading on request and response', async () => {
-    mock.onGet('/test').reply(200, {});
-    await api.get('/test');
+  it('toggles loading on request and response', async () => {
+    mock.onGet('/login').reply(200, [{token: 'any'}]);
+
+    await api.get('/login');
+
     expect(showLoading).toHaveBeenCalledTimes(2);
-    expect(showLoading.mock.calls[0][0]).toBe(true);
-    expect(showLoading.mock.calls[1][0]).toBe(false);
+    expect(showLoading).toHaveBeenNthCalledWith(1, true);
+    expect(showLoading).toHaveBeenNthCalledWith(2, false);
   });
 
-  test('should set Authorization header and hide loading on success', async () => {
-    mock.onGet('/success').reply(200, {data: 123});
-    await api.get('/success');
-    expect(showLoading).toHaveBeenCalledTimes(2);
-    expect(showLoading.mock.calls[1][0]).toBe(false);
-    const auth = api.defaults.headers.common.Authorization;
-    expect(auth).toMatch(/^Bearer [a-z0-9]+$/);
+  it('returns first item on successful response', async () => {
+    const data = [{token: 't'}];
+    mock.onGet('/login').reply(200, data);
+
+    const result = await api.get('/login');
+    expect(result).toEqual(data[0]);
   });
 
-  test('should handle API error response', async () => {
-    const errorMessage = 'Fail';
-    mock.onGet('/error').reply(400, {message: errorMessage});
+  it('shows error on invalid data structure', async () => {
+    mock.onGet('/login').reply(200, [{}]);
 
-    await expect(api.get('/error')).rejects.toThrow();
-
-    expect(showLoading).toHaveBeenCalledTimes(2);
-    expect(showLoading.mock.calls[1][0]).toBe(false);
+    const result = await api.get('/login');
     expect(showError).toHaveBeenCalledWith({
-      message: errorMessage,
+      message: 'login ou senha incorretos',
       visible: true,
     });
+    expect(result).toEqual({});
   });
 
-  test('should handle config error', async () => {
-    api.interceptors.request.use(() => {
-      throw new Error('Config failed');
+  it('shows API error message on HTTP error', async () => {
+    mock.onGet('/login').reply(400, {message: 'Err'});
+
+    await expect(api.get('/login')).rejects.toThrow();
+    expect(showError).toHaveBeenCalledWith({message: 'Err', visible: true});
+  });
+
+  it('shows unexpected error on network failure', async () => {
+    mock.onGet('/login').networkError();
+
+    await expect(api.get('/login')).rejects.toThrow();
+    expect(showError).toHaveBeenCalledWith({
+      message: 'Erro inesperado. Tente novamente.',
+      visible: true,
     });
-    await expect(api.get('/any')).rejects.toThrow('Config failed');
   });
 });

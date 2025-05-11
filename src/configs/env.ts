@@ -8,15 +8,15 @@ const AMBIENTE = 'dev';
 const envs: IEnv[] = [
   {
     name: 'dev',
-    api: `http://${'192.168.1.7'}:3333`,
+    api: `http://192.168.1.7:3333`,
   },
   {
     name: 'test',
-    api: '',
+    api: `http://localhost:3333`,
   },
   {
     name: 'production',
-    api: '',
+    api: `http://localhost:3333`,
   },
 ];
 
