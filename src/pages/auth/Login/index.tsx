@@ -5,7 +5,6 @@ import {
   Button,
   Image,
   ImageBackground,
-  set,
   Spinner,
   Text,
 } from '@gluestack-ui/themed';
@@ -21,7 +20,6 @@ import {useError} from '@/hooks/appError';
 import useThemeStore from '@/store/useThemeStore';
 import {getManufacturer} from '@/NativeModules/android/DeviceInfo';
 
-// Define o esquema de validação com o Yup
 const schema = yup.object({
   email: yup
     .string()
@@ -29,11 +27,11 @@ const schema = yup.object({
     .required('O email é obrigatório'),
   senha: yup
     .string()
-    .min(6, 'A senha deve ter pelo menos 6 caracteres')
-    .matches(/[a-z]/, 'A senha deve conter pelo menos uma letra minúscula')
-    .matches(/[A-Z]/, 'A senha deve conter pelo menos uma letra maiúscula')
-    .matches(/[0-9]/, 'A senha deve conter pelo menos um número')
-    .matches(/[\W_]/, 'A senha deve conter pelo menos um caractere especial')
+    // .min(6, 'A senha deve ter pelo menos 6 caracteres')
+    // .matches(/[a-z]/, 'A senha deve conter pelo menos uma letra minúscula')
+    // .matches(/[A-Z]/, 'A senha deve conter pelo menos uma letra maiúscula')
+    // .matches(/[0-9]/, 'A senha deve conter pelo menos um número')
+    // .matches(/[\W_]/, 'A senha deve conter pelo menos um caractere especial')
     .required('A senha é obrigatória'),
 });
 
@@ -48,7 +46,6 @@ export function Login() {
 
   const {loading} = useError();
   const {signIn} = useAuth();
-  // Configuração do react-hook-form com resolver do Yup
   const {
     control,
     handleSubmit,
@@ -93,8 +90,8 @@ export function Login() {
     })();
   }, []);
 
-  // Função de submit
   const onSubmit = async (data: ILogin) => {
+    console.log('onSubmit', {data});
     await signIn(data);
   };
 

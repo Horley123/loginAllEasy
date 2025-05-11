@@ -110,11 +110,11 @@ describe('Input component', () => {
       />,
     );
 
-    const eye = getByTestId('icon-eye');
+    const eye = getByTestId('icon-eye-slash');
     expect(eye).toBeTruthy();
     fireEvent.press(eye);
 
-    const slash = getByTestId('icon-eye-slash');
+    const slash = getByTestId('icon-eye');
     expect(slash).toBeTruthy();
   });
 });

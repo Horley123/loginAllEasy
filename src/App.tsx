@@ -7,7 +7,6 @@ import Routes from './routes';
 import {Backdrop} from './components/Backdrop';
 import TooltipeError from './components/TooltipeError';
 import {GluestackUIProvider} from '@gluestack-ui/themed';
-import {config} from '@gluestack-ui/config';
 import useThemeStore from './store/useThemeStore';
 
 function App(): React.JSX.Element {

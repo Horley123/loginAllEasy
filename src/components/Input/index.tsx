@@ -51,7 +51,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   },
   ref,
 ) => {
-  const [secure, setSecure] = React.useState(true);
+  const [secure, setSecure] = React.useState(false);
   const {theme} = useThemeStore();
 
   const {loading} = useError();
@@ -99,7 +99,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
           fontSize={17}
           value={value}
           onChangeText={(newValue: string) => onText(newValue)}
-          secureTextEntry={secureTextEntry && secure}
+          secureTextEntry={secureTextEntry && !secure}
         />
         {secureTextEntry && (
           <InputSlot pr="$3" onPress={() => {}}>

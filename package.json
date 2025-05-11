@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android && json-server db.json -p 3333",
-    "ios": "react-native run-ios && json-server db.json -p 3333",
-    "all": "react-native run-ios && react-native run-android && json-server db.json -p 3333",
+    "android": "react-native run-android && json-server db.json ",
+    "ios": "react-native run-ios && json-server db.json && json-server db.json ",
+    "all": "react-native run-ios && react-native run-android && json-server db.json ",
     "lint": "eslint .",
     "start": "react-native start ",
     "test": "jest"

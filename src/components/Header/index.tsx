@@ -1,8 +1,8 @@
-// Header.tsx
 import React from 'react';
 import {useAuth} from '@/hooks/useAuth';
 import switchTheme from 'react-native-theme-switch-animation';
 import {Box, Text, Icon} from '@gluestack-ui/themed';
+
 import useThemeStore from '@/store/useThemeStore';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -13,6 +13,7 @@ type Props = {
 export function Header({title}: Props) {
   const {signOut} = useAuth();
   const {theme, toggleTheme, isDarkMode} = useThemeStore();
+
   return (
     <Box
       w="100%"
@@ -28,8 +29,9 @@ export function Header({title}: Props) {
 
       <Box flexDirection="row" alignItems="center" gap="$2">
         <FontAwesome
+          testID="toggle-on"
           size={20}
-          name={isDarkMode ? 'moon-o' : 'sun-o'}
+          name={'toggle-on'}
           color={theme.tokens.colors.white}
           onPress={() =>
             switchTheme({

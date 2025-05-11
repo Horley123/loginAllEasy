@@ -2,13 +2,13 @@ interface IEnv {
   name: 'dev' | 'test' | 'production';
   api: string;
 }
-// const AMBIENTE = 'dev';
+
 const AMBIENTE = 'dev';
 
 const envs: IEnv[] = [
   {
     name: 'dev',
-    api: `http://192.168.1.7:3333`,
+    api: `http://localhost:3000/`,
   },
   {
     name: 'test',

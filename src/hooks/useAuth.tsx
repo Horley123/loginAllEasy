@@ -33,19 +33,17 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
     })();
   }, [data]);
 
-  const signIn = React.useCallback(
-    async ({email, senha}: ILogin) => {
-      const user: any = await requestLogin({email, senha});
+  const signIn = React.useCallback(async ({email, senha}: ILogin) => {
+    const user: any = await requestLogin({email, senha});
+    console.log('user', {user});
 
-      if (!user) {
-        return;
-      }
-      console.log({user});
-      await AsyncStorage.setItem('@User', JSON.stringify(user));
-      setData(user);
-    },
-    [data],
-  );
+    if (!user) {
+      return;
+    }
+    console.log({user});
+    await AsyncStorage.setItem('@User', JSON.stringify(user));
+    setData(user);
+  }, []);
 
   const signOut = React.useCallback(async () => {
     await AsyncStorage.removeItem('@User');

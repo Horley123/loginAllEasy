@@ -1,4 +1,3 @@
-
 # loginAllEasy
 
 Aplicativo de autenticação desenvolvido em React Native, criado como parte de um teste técnico para avaliar conhecimentos em diversas tecnologias e conceitos modernos de desenvolvimento mobile.
@@ -27,7 +26,7 @@ Desenvolver um aplicativo em React Native que utilize as seguintes tecnologias e
 ## 🛠️ Tecnologias Utilizadas
 
 - [React Native](https://reactnative.dev/)
-- [Native Base](https://nativebase.io/)
+- [Gluestack](https://gluestack.io/ui/docs/home/overview/quick-start)
 - [React Hook Form](https://react-hook-form.com/)
 - [Context API](https://reactjs.org/docs/context.html)
 - [Zustand](https://zustand-demo.pmnd.rs/)
@@ -38,16 +37,19 @@ Desenvolver um aplicativo em React Native que utilize as seguintes tecnologias e
 ## ⚙️ Instalação
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/Horley123/loginAllEasy.git
    ```
 
 2. Navegue até o diretório do projeto:
+
    ```bash
    cd loginAllEasy
    ```
 
 3. Instale as dependências:
+
    ```bash
    npm install
    # ou
@@ -55,18 +57,25 @@ Desenvolver um aplicativo em React Native que utilize as seguintes tecnologias e
    ```
 
 4. Inicie o Metro Bundler:
+
    ```bash
-   npx react-native start
+   yarn start
+   # ou
+   npm start
    ```
 
 5. Em outro terminal, execute o aplicativo:
    - Para Android:
      ```bash
-     npx react-native run-android
+     yarn android
+      # ou
+     npm start
      ```
    - Para iOS:
      ```bash
-     npx react-native run-ios
+     yarn ios
+      # ou
+     npm start
      ```
 
 ## 🚀 Uso
@@ -82,6 +91,7 @@ Após iniciar o aplicativo, você será apresentado a uma tela de login. Utilize
 - Requisições de autenticação utilizando Axios com interceptors para adicionar o token de autenticação.
 - Exibição de mensagens de erro em caso de falha na autenticação.
 - Integração nativa com Swift e Kotlin para obter informações específicas do dispositivo.
+- Fake api com json-server
 
 ## 🔐 Credenciais de Teste
 
@@ -91,6 +101,12 @@ Para fins de teste, utilize as seguintes credenciais:
 - **Senha:** `123TA@a`
 
 Essas credenciais permitirão que você acesse o aplicativo e explore suas funcionalidades.
+
+## OBS
+
+Talvez seja necessario mudar o http://localhost:3000/ para http://Seu ip local:3000/
+
+![Demonstração do app](./src/assets/demonstracao.gif)
 
 ## 👥 Contribuidores
 

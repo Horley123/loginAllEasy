@@ -25,6 +25,6 @@ describe('Home', () => {
       </StyledProvider>,
     );
 
-    expect(getByText('Ola, seja bem vindo')).toBeTruthy();
+    expect(getByText('Olá, seja bem-vindo!')).toBeTruthy();
   });
 });

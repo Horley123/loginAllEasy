@@ -5,7 +5,7 @@ describe('Environment configuration', () => {
     expect(currentEnv).toEqual(
       expect.objectContaining({
         name: 'dev',
-        api: expect.stringContaining('http://192.168.1.7:3333'),
+        api: expect.stringContaining('http://localhost:3000/'),
       }),
     );
   });

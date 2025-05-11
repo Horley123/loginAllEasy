@@ -18,13 +18,15 @@ export const setupApiInterceptors = (
   showLoading: (visible: boolean) => void,
 ) => {
   api.interceptors.request.use(config => {
+    console.log('config', config);
     showLoading(true);
     return config;
   });
 
   api.interceptors.response.use(
     response => {
-      if (!response.data[0].token) {
+      if (!response.data[0]?.token) {
+        console.log('aqui', response.data);
         showLoading(false);
         showError?.({
           message: 'login ou senha incorretos',
@@ -47,19 +49,17 @@ export const setupApiInterceptors = (
           message: error.response.data.message || 'Erro na API',
           visible: true,
         });
+      } else if (error.request) {
+        showError?.({
+          message: 'Erro de conexão. Verifique sua internet.',
+          visible: true,
+        });
       } else {
-        console.log('Error', error);
         showError?.({
           message: 'Erro inesperado. Tente novamente.',
           visible: true,
         });
       }
-      // else if (error.request) {
-      //   showError?.({
-      //     message: 'Erro de conexão. Verifique sua internet.',
-      //     visible: true,
-      //   });
-      // }
 
       return Promise.reject(error);
     },

@@ -92,7 +92,7 @@ describe('Header component', () => {
 
   it('deve alternar o tema ao pressionar o ícone', () => {
     const {getByTestId} = render(<Header title="Título" />);
-    const icon = getByTestId('icon-sun-o');
+    const icon = getByTestId('toggle-on');
     fireEvent.press(icon);
     expect(mockToggleTheme).toHaveBeenCalledTimes(1);
   });

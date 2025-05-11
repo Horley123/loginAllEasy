@@ -4,12 +4,12 @@ import Animated, {FadeIn} from 'react-native-reanimated';
 import useThemeStore from '@/store/useThemeStore';
 
 const messages = [
-  'Ola, seja bem vindo',
-  'Esse app foi desenvolvido para demonstrar as habilidades de Horley',
-  'Se voce chgeou ate aqui quer dizer que o app deu certo :)',
-  'Espero que tenha gostado da experiencia',
-  'Se voce quiser saber mais sobre mim, entre em contato',
-  'Ate a proxima',
+  'Olá, seja bem-vindo!',
+  'Este app foi desenvolvido para demonstrar as habilidades de Horley.',
+  'Se você chegou até aqui, quer dizer que o app funcionou :)',
+  'Espero que tenha gostado da experiência.',
+  'Se quiser saber mais sobre mim, entre em contato.',
+  'Até a próxima!',
 ];
 
 export function Home() {
