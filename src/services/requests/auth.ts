@@ -6,7 +6,6 @@ export const requestLogin = async ({
   senha,
 }: ILogin): Promise<ILoginResponse | undefined> => {
   if (email === 'teste@example.com' && senha === '123TA@a') {
-    // await new Promise(resolve => setTimeout(resolve, 10000));
     return {
       email,
       senha,

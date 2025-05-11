@@ -1,97 +1,101 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# loginAllEasy
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Aplicativo de autenticação desenvolvido em React Native, criado como parte de um teste técnico para avaliar conhecimentos em diversas tecnologias e conceitos modernos de desenvolvimento mobile.
 
-## Step 1: Start Metro
+## 📋 Índice
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- [Objetivo](#objetivo)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Funcionalidades Implementadas](#funcionalidades-implementadas)
+- [Credenciais de Teste](#credenciais-de-teste)
+- [Contribuidores](#contribuidores)
+- [Licença](#licença)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 🎯 Objetivo
 
-```sh
-# Using npm
-npm start
+Desenvolver um aplicativo em React Native que utilize as seguintes tecnologias e conceitos:
 
-# OR using Yarn
-yarn start
-```
+1. **Interface com Native Base**: Tela de login estilizada com campos para e-mail e senha, além de um botão de login.
+2. **Formulários com React Hook Form**: Gerenciamento dos inputs do formulário de login com validações, como obrigatoriedade e formato do e-mail.
+3. **Gerenciamento de Estado com Context API e Zustand**: Contexto global para armazenar dados do usuário autenticado e Zustand para gerenciar o estado do tema (modo claro e escuro).
+4. **Requisições com Axios e Interceptors**: Autenticação com requisição de login utilizando Axios, interceptor para adicionar o token de autenticação no cabeçalho das requisições subsequentes e exibição de mensagens de erro adequadas em caso de falha na autenticação.
+5. **Integração Nativa com Swift e Kotlin**: Módulo nativo em Swift (iOS) que retorna a versão do sistema operacional e módulo nativo em Kotlin (Android) que retorna o nome do fabricante do dispositivo. Essas informações são exibidas na tela inicial após o login.
 
-## Step 2: Build and run your app
+## 🛠️ Tecnologias Utilizadas
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- [React Native](https://reactnative.dev/)
+- [Native Base](https://nativebase.io/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Context API](https://reactjs.org/docs/context.html)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Axios](https://axios-http.com/)
+- [Swift](https://developer.apple.com/swift/) (iOS)
+- [Kotlin](https://kotlinlang.org/) (Android)
 
-### Android
+## ⚙️ Instalação
 
-```sh
-# Using npm
-npm run android
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Horley123/loginAllEasy.git
+   ```
 
-# OR using Yarn
-yarn android
-```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd loginAllEasy
+   ```
 
-### iOS
+3. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+4. Inicie o Metro Bundler:
+   ```bash
+   npx react-native start
+   ```
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+5. Em outro terminal, execute o aplicativo:
+   - Para Android:
+     ```bash
+     npx react-native run-android
+     ```
+   - Para iOS:
+     ```bash
+     npx react-native run-ios
+     ```
 
-```sh
-bundle install
-```
+## 🚀 Uso
 
-Then, and every time you update your native dependencies, run:
+Após iniciar o aplicativo, você será apresentado a uma tela de login. Utilize as credenciais de teste fornecidas abaixo para acessar o sistema. Após o login bem-sucedido, a tela inicial exibirá informações obtidas dos módulos nativos, como a versão do sistema operacional (iOS) ou o nome do fabricante do dispositivo (Android).
 
-```sh
-bundle exec pod install
-```
+## ✅ Funcionalidades Implementadas
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- Tela de login estilizada com Native Base.
+- Formulário de login gerenciado com React Hook Form, incluindo validações.
+- Gerenciamento de estado do usuário autenticado com Context API.
+- Gerenciamento do tema (modo claro/escuro) com Zustand.
+- Requisições de autenticação utilizando Axios com interceptors para adicionar o token de autenticação.
+- Exibição de mensagens de erro em caso de falha na autenticação.
+- Integração nativa com Swift e Kotlin para obter informações específicas do dispositivo.
 
-```sh
-# Using npm
-npm run ios
+## 🔐 Credenciais de Teste
 
-# OR using Yarn
-yarn ios
-```
+Para fins de teste, utilize as seguintes credenciais:
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- **Email:** `teste@example.com`
+- **Senha:** `123TA@a`
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Essas credenciais permitirão que você acesse o aplicativo e explore suas funcionalidades.
 
-## Step 3: Modify your app
+## 👥 Contribuidores
 
-Now that you have successfully run the app, let's make changes!
+- [Horley123](https://github.com/Horley123) - Desenvolvedor principal
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 📄 Licença
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este projeto está licenciado sob a [MIT License](LICENSE).
